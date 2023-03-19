@@ -13,7 +13,7 @@ import {
   Toolbar,
   Button,
   Container,
-  Typography,
+  // Typography,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../Logo.svg";
@@ -30,10 +30,23 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    // SideNavBar reveal on mobile
+    // ------------------ SideBar ----------------- //
+
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box>
-        <img src={logo} alt="logo" height="80" width="60" />
+      <Box
+        sx={{
+          height: 87,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          color: "#353535",
+          fontSize: "1.2rem",
+          fontFamily: "Jost",
+          fontWeight: "500",
+        }}
+      >
+        Murtaza Mohebi
       </Box>
       <Divider />
       <List>
@@ -75,10 +88,11 @@ function DrawerAppBar(props) {
                   key={item}
                   sx={{
                     color: "#353535",
-                    fontSize: "1rem",
+                    fontSize: "1.05rem",
                     fontFamily: "Jost",
                     fontWeight: "400",
                     textTransform: "none",
+                    mr: "10px",
                   }}
                 >
                   {item}

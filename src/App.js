@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { createTheme, ThemeProvider } from "@material-ui/core";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
