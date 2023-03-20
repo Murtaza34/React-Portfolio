@@ -40,9 +40,8 @@ function DrawerAppBar(props) {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-          color: "#353535",
-          fontSize: "1.2rem",
-          fontFamily: "Jost",
+          color: "#e5e5e5",
+          fontSize: "1.3rem",
           fontWeight: "500",
         }}
       >
@@ -66,7 +65,7 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ bgcolor: "#f8f9fa" }}>
+      <AppBar component="nav" sx={{ bgcolor: "none" }}>
         <Container>
           <Toolbar>
             <IconButton
@@ -87,7 +86,7 @@ function DrawerAppBar(props) {
                 <Button
                   key={item}
                   sx={{
-                    color: "#353535",
+                    color: "#e5e5e5",
                     fontSize: "1.05rem",
                     fontFamily: "Jost",
                     fontWeight: "400",

@@ -11,6 +11,9 @@ const theme = createTheme({
     fontWeightRegular: "400",
     fontWeightBold: "500",
   },
+  palette: {
+    mode: "dark",
+  },
 });
 
 const App = () => {
