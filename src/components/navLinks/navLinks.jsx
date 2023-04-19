@@ -1,6 +1,6 @@
-import React from 'react'
-import { Box, Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Box, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 /* ---------- CSS Styling for Nav buttons --------- */
 const ButtonStyles = {
@@ -26,6 +26,6 @@ const NavLinks = () => {
       </Box>
     </>
   );
-}
+};
 
-export default NavLinks
+export default NavLinks;
