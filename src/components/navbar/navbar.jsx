@@ -11,17 +11,19 @@ import {
   ListItemButton,
   ListItemText,
   Toolbar,
-  Button,
+  // Button,
   Container,
-  // Typography,
+  Typography,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../Logo.svg";
+import Logo from "../../assets/personal_logo.svg";
+import { Link } from "react-router-dom";
+import NavLinks from "../navLinks/navLinks";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "projects", "Contact", "Resume"];
 
-function DrawerAppBar(props) {
+function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -30,8 +32,7 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    // ------------------ SideBar ----------------- //
-
+    // ------------------ Sidebar ----------------- //
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Box
         sx={{
@@ -40,7 +41,6 @@ function DrawerAppBar(props) {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-          color: "#e5e5e5",
           fontSize: "1.3rem",
           fontWeight: "500",
         }}
@@ -65,11 +65,10 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ bgcolor: "none" }}>
+      <AppBar component="nav" position="static" sx={{ bgcolor: "none" }}>
         <Container>
           <Toolbar>
             <IconButton
-              color="#353535"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
@@ -77,16 +76,15 @@ function DrawerAppBar(props) {
             >
               <MenuIcon />
             </IconButton>
-            {/* Personal logo */}
-            <Box sx={{ flexGrow: 1, textAlign: { xs: "center", sm: "left" } }}>
-              <img src={logo} alt="logo" height="80" width="60" />
+            {/* ------------ Personal Logo below ----------- */}
+            {/* <Box sx={{ flexGrow: 1, textAlign: { xs: "center", sm: "left" } }}>
+              <img src={Logo} alt="Logo" height="80" width="60" />
             </Box>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
                 <Button
                   key={item}
                   sx={{
-                    color: "#e5e5e5",
                     fontSize: "1.05rem",
                     fontFamily: "Jost",
                     fontWeight: "400",
@@ -97,7 +95,39 @@ function DrawerAppBar(props) {
                   {item}
                 </Button>
               ))}
+            </Box> */}
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: { xs: "center", sm: "left" },
+                flexGrow: 1,
+                textAlign: { xs: "center", sm: "left" },
+                my: 2,
+              }}
+            >
+              <img src={Logo} alt="Personal Logo" height="80" width="60" />
+              <Typography
+                sx={{
+                  ml: 2,
+                  display: { xs: "none", sm: "block" },
+                }}
+              >
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    color: "#F0F0F0",
+                    fontWeight: "400",
+                    fontSize: "20px",
+                  }}
+                >
+                  Murtaza Mohebi
+                </Link>
+              </Typography>
             </Box>
+            {/* Importing the nav buttons */}
+            <NavLinks />
           </Toolbar>
         </Container>
       </AppBar>
@@ -122,4 +152,4 @@ function DrawerAppBar(props) {
   );
 }
 
-export default DrawerAppBar;
+export default Navbar;
